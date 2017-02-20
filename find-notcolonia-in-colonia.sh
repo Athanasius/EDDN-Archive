@@ -1,0 +1,1 @@
+for i in data/archive-journal-2017-01-29.json ; do jq --sort-keys '.Items[] | if .message.StarSystem == Colonia then select(.message.BodyName | startswith(Colonia ) | not ) else empty end'  ; done | less
